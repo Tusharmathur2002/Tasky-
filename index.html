@@ -16,6 +16,39 @@
 </head>
 
 <body>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Task</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="ImageUrl" class="form-label">Image Url</label>
+            <input type="url" class="form-control" id="ImageUrl" placeholder="https://images.com"/>
+          </div>
+          <div class="mb-3">
+            <label for="Task title" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="Task title" placeholder="Learn from Dev"/>
+          </div>
+          <div class="mb-3">
+            <label for="task type" class="form-label">task Type</label>
+            <input type="text" class="form-control" id="task type" placeholder="Work"/>
+          </div>
+          <div class="mb-3">
+            <label for="taskdescription" class="form-label">task Description </label>
+            <textarea row ="6"class="form-control" id="taskdescription" placeholder="Building something amazing"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-md bg-light shadow-sm">
         <div class="container-fluid">
@@ -29,7 +62,7 @@
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
              </ul>
-             <button type="button" class="btn btn-primary"><i class="fa-solid fa-plus" style="color: #eef1f5;"></i>Add New</button>
+             <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-plus" style="color: #eef1f5;"></i>Add New</button>
            
             </div>
         </div>
@@ -74,7 +107,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-
+<!-- Our js file -->
+<script src="index.js"></script>
 </body>
 
 </html>
