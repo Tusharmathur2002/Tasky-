@@ -7,7 +7,7 @@ const newCard = ({ id, imageUrl, taskTitle, taskType, taskDescription }) =>
   `<div class="col-md-6 col-lg-4" id=${id}>
 <section><div class="card">
     <div class="card-header d-flex justify-content-end gap-2">
-      <button type="button" class="btn btn-outline-success"><i class="fa-sharp fa-solid fa-pencil"></i></button>
+      <button type="button" id=${id} class="btn btn-outline-success"onclick ="editCard.apply(this, arguments)"><i class="fa-sharp fa-solid fa-pencil"id=${id} onclick ="editCard.apply(this, arguments)"></i></button>
 <button type="button" id=${id} class="btn btn-outline-danger" onclick ="deleteCard.apply(this, arguments)"><i class="fa-solid fa-trash" onclick ="deleteCard.apply(this, arguments)"></i></button>
     </div>
     <img src=${imageUrl}
@@ -78,7 +78,7 @@ const deleteCard = (event) => {
   event = window.event;
   const targetID = event.target.id;
   const tagname = event.target.tagName; //BUTTON
-  console.log(targetID);
+ 
 
   //search the global store , remove the object which has the id
   globalStore = globalStore.filter(
@@ -99,4 +99,28 @@ const deleteCard = (event) => {
   return event.target.parentNode.parentNode.parentNode.parentNode.parentNode.removeChild(
     event.target.parentNode.parentNode.parentNode.parentNode);
 
+
+  };
+
+//content-editable->use to edit attribute
+
+const editCard=(event) =>{
+  event = window.event;
+  const targetID = event.target.id;
+  const tagname = event.target.tagName;
+  
+  let parentElement;
+  if(tagname==="BUTTON"){
+    parentElement= event.target.parentNode.parentNode;
+  }
+  else{
+    parentElement= event.target.parentNode.parentNode.parentNode;
+  }
+let taskTitle = parentElement.childNode[5].childNodes[1];
+let taskDescription = parentElement.childNode[5].childNodes[3];
+let taskType = parentElement.childNode[5].childNodes[5];
+
+// setAttributes
+
 };
+
