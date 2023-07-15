@@ -25,11 +25,15 @@ const newCard = ({ id, imageUrl, taskTitle, taskType, taskDescription }) =>
 const saveChanges = () => {
     const taskData = {
         id: `${Date.now()}`,
-        imageUrl: document.getElementById("imageUrl").value,
-        taskTitle: document.getElementById("taskTitle").value,
-        taskType: document.getElementById("taskType").value,
-        taskDescription: document.getElementById("taskDescription").value,
+        imageUrl: document.getElementById("ImageUrl").value,
+        taskTitle: document.getElementById("Tasktitle").value,
+        taskType: document.getElementById("tasktype").value,
+        taskDescription: document.getElementById("taskdescription").value,
     };
     const createNewCard = newCard(taskData);
     taskContainer.insertAdjacentHTML("beforeend", createNewCard);
 }; 
+// The modal was not closing upon adding a new card
+//Delete modal feature
+
+//Features
